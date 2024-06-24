@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -147,7 +147,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tiger_3_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 95
+        width: 853
+        height: 953
+      alignment: 9
+      pivot: {x: 0.49602026, y: 0.5623378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ddfb05fab014b8a843193170b1a8a7
+      internalID: -715727113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_3_1
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 114
+        width: 877
+        height: 922
+      alignment: 9
+      pivot: {x: 0.48064566, y: 0.54050124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3289db24904c34d11bdcf8c033e01b97
+      internalID: -821078232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_3_2
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 112
+        width: 855
+        height: 923
+      alignment: 9
+      pivot: {x: 0.4980146, y: 0.5496522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8383bccc7099044598483bb04c4ebf24
+      internalID: -395620522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_3_3
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 120
+        width: 876
+        height: 905
+      alignment: 9
+      pivot: {x: 0.49224937, y: 0.5468887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff8b74fd7501436e97a964d03e2c9c7
+      internalID: 104044617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +242,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tiger_3_0: -715727113
+      tiger_3_1: -821078232
+      tiger_3_10: -1995584269
+      tiger_3_11: -173237681
+      tiger_3_12: 29461204
+      tiger_3_13: 1897188407
+      tiger_3_14: -305847434
+      tiger_3_15: -1381253241
+      tiger_3_16: -860408286
+      tiger_3_2: -395620522
+      tiger_3_3: 104044617
+      tiger_3_6: 347102585
+      tiger_3_8: 1584240360
+      tiger_3_9: 1867746153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
