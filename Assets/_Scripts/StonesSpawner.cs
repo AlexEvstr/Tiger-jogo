@@ -5,12 +5,13 @@ using UnityEngine;
 public class StonesSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _stones;
-    [SerializeField] private GameObject _tiger;
+    private GameObject _tiger;
     //private float[] xPosition = {-1.75f, 0, 1.75f };
     public static bool CanSpawnStone;
 
     private void Start()
     {
+        _tiger = GameObject.FindGameObjectWithTag("Tiger");
         CanSpawnStone = true;
         StartCoroutine(SpawnStone());
     }

@@ -17,6 +17,7 @@ public class TigerCollisionDetector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Stone"))
         {
+            collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
             RoadMovement.CanMovement = false;
             GetComponent<Animator>().enabled = false;
             StartCoroutine(ShowTask());
@@ -38,8 +39,6 @@ public class TigerCollisionDetector : MonoBehaviour
     {
         _ball_1.sprite = _ballSprites[Random.Range(0, _ballSprites.Length)];
         _ball_2.sprite = _ballSprites[Random.Range(0, _ballSprites.Length)];
-        Debug.Log(_ball_1.sprite.name);
-        Debug.Log(_ball_2.sprite.name);
         PlayerPrefs.SetString("selectedBall_1", _ball_1.sprite.name);
         PlayerPrefs.SetString("selectedBall_2", _ball_2.sprite.name);
     }
