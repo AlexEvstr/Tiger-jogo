@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class RoadMovement : MonoBehaviour
 {
-    private float scrollSpeed = 1.0f;
+    private float scrollSpeed = 2.0f;
     private Vector2 startPosition;
     private float bgHeight;
 
+    public static bool CanMovement;
+
     private void Start()
     {
+        CanMovement = true;
         startPosition = transform.position;
         bgHeight = GetComponent<BoxCollider2D>().size.y / 2f;
     }
@@ -19,10 +22,13 @@ public class RoadMovement : MonoBehaviour
 
     private void MoveBackground()
     {
-        transform.Translate(Vector2.down * scrollSpeed * Time.deltaTime);
-        if (transform.position.y < (startPosition.y - bgHeight))
+        if (CanMovement)
         {
-            RepositionBackground();
+            transform.Translate(Vector2.down * scrollSpeed * Time.deltaTime);
+            if (transform.position.y < (startPosition.y - bgHeight))
+            {
+                RepositionBackground();
+            }
         }
     }
 
