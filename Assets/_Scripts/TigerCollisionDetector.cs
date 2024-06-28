@@ -36,8 +36,12 @@ public class TigerCollisionDetector : MonoBehaviour
 
     private void SetRandomTask()
     {
-        _ball_1.sprite = _ballSprites[UnityEngine.Random.Range(0, _ballSprites.Length)];
-        _ball_2.sprite = _ballSprites[UnityEngine.Random.Range(0, _ballSprites.Length)];
+        _ball_1.sprite = _ballSprites[Random.Range(0, _ballSprites.Length)];
+        _ball_2.sprite = _ballSprites[Random.Range(0, _ballSprites.Length)];
+        Debug.Log(_ball_1.sprite.name);
+        Debug.Log(_ball_2.sprite.name);
+        PlayerPrefs.SetString("selectedBall_1", _ball_1.sprite.name);
+        PlayerPrefs.SetString("selectedBall_2", _ball_2.sprite.name);
     }
 
     private void SetRandomAllBalls()
