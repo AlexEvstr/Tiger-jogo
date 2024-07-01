@@ -26,18 +26,18 @@ public class RoadSkinSelector : MonoBehaviour
         playerMoney = PlayerPrefs.GetInt("TotalScore", 0);
         _totalScoreText.text = playerMoney.ToString();
         _totalScoreTextTigers.text = playerMoney.ToString();
-        if (string.IsNullOrEmpty(PlayerPrefs.GetString("SelectedSkinRoad")))
+        if (!PlayerPrefs.HasKey("SelectedSkinRoad"))
         {
-            PlayerPrefs.SetString("SelectedSkinRoad", "0");
-            PlayerPrefs.SetInt("0", 1);
+            PlayerPrefs.SetInt("SelectedSkinRoad", 0);
+            PlayerPrefs.SetInt("0road", 1);
         }
 
         foreach (var skin in skins)
         {
-            if (PlayerPrefs.GetInt(skin.skinName, 0) == 1)
+            if (PlayerPrefs.GetInt(skin.skinName + "road", 0) == 1)
             {
                 skin.button.onClick.AddListener(() => SelectSkin(skin.skinName));
-                if (PlayerPrefs.GetString("SelectedSkinRoad") == skin.skinName)
+                if (PlayerPrefs.GetInt("SelectedSkinRoad") == int.Parse(skin.skinName))
                 {
                     skin.buttonText.text = "Selected";
                     skin.button.image.color = Color.green;
@@ -93,9 +93,9 @@ public class RoadSkinSelector : MonoBehaviour
             {
                 skin.button.image.color = Color.green;
                 skin.buttonText.text = "Selected";
-                PlayerPrefs.SetString("SelectedSkinRoad", skinName);
+                PlayerPrefs.SetInt("SelectedSkinRoad", int.Parse(skinName));
             }
-            else if (PlayerPrefs.GetInt(skin.skinName, 0) == 1)
+            else if (PlayerPrefs.GetInt(skin.skinName + "road", 0) == 1)
             {
                 skin.button.image.color = Color.white;
                 skin.buttonText.text = "Select";

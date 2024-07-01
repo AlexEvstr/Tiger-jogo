@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 22875591}
   - component: {fileID: 22875592}
   - component: {fileID: 22875593}
+  - component: {fileID: 22875594}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -239,6 +240,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae66931f670b472eb04c1e62d9692ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &22875594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22875586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2838347bf3af74831a353ecf74fc0e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tigers:
+  - {fileID: 550487599}
+  - {fileID: 748786655}
+  - {fileID: 1494874274}
+  - {fileID: 1701709199}
+  _roads:
+  - {fileID: 1484626089}
+  - {fileID: 455888521}
+  _roadsSprites:
+  - {fileID: 21300000, guid: 6a235aa16a2f542acae92804ca638c1e, type: 3}
+  - {fileID: 21300000, guid: 390a8380890cb4d55b52b6e14245a122, type: 3}
+  - {fileID: 21300000, guid: 37c6091f4b48c46df9e11d34d49b263a, type: 3}
+  - {fileID: 21300000, guid: 8735b17054571436897de48ded8332a0, type: 3}
 --- !u!1 &122464250
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +993,10 @@ PrefabInstance:
     - target: {fileID: 1998458152424856133, guid: 25a3fb0b82bf54217b6bc6dc6d50aee7, type: 3}
       propertyPath: m_Name
       value: tiger_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998458152424856133, guid: 25a3fb0b82bf54217b6bc6dc6d50aee7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1998458152424856133, guid: 25a3fb0b82bf54217b6bc6dc6d50aee7, type: 3}
       propertyPath: m_TagString

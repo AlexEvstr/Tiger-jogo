@@ -25,9 +25,9 @@ public class SkinSelector : MonoBehaviour
         playerMoney = PlayerPrefs.GetInt("TotalScore", 0);
         _totalScoreText.text = playerMoney.ToString();
         _totalScoreTextRoad.text = playerMoney.ToString();
-        if (string.IsNullOrEmpty(PlayerPrefs.GetString("SelectedSkin")))
+        if (!PlayerPrefs.HasKey("SelectedSkin"))
         {
-            PlayerPrefs.SetString("SelectedSkin", "0");
+            PlayerPrefs.SetInt("SelectedSkin", 0);
             PlayerPrefs.SetInt("0", 1);
         }
 
@@ -36,7 +36,7 @@ public class SkinSelector : MonoBehaviour
             if (PlayerPrefs.GetInt(skin.skinName, 0) == 1)
             {
                 skin.button.onClick.AddListener(() => SelectSkin(skin.skinName));
-                if (PlayerPrefs.GetString("SelectedSkin") == skin.skinName)
+                if (PlayerPrefs.GetInt("SelectedSkin") == int.Parse(skin.skinName))
                 {
                     skin.buttonText.text = "Selected";
                     skin.button.image.color = Color.green;
@@ -93,7 +93,7 @@ public class SkinSelector : MonoBehaviour
             {
                 skin.button.image.color = Color.green;
                 skin.buttonText.text = "Selected";
-                PlayerPrefs.SetString("SelectedSkin", skinName);
+                PlayerPrefs.SetInt("SelectedSkin", int.Parse(skinName));
             }
             else if (PlayerPrefs.GetInt(skin.skinName, 0) == 1)
             {
