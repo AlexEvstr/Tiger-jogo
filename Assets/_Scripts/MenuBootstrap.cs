@@ -8,6 +8,8 @@ public class MenuBootstrap : MonoBehaviour
     [SerializeField] private GameObject _menuPanel;
     [SerializeField] private GameObject _settingsPanel;
     [SerializeField] private GameObject _shopPanel;
+    [SerializeField] private GameObject _tigersShop;
+    [SerializeField] private GameObject _roadsShop;
 
     public void StartGame()
     {
@@ -37,4 +39,29 @@ public class MenuBootstrap : MonoBehaviour
         _shopPanel.SetActive(false);
         _menuPanel.SetActive(true);
     }
+
+    public void OpenTigersShop()
+    {
+        _shopPanel.SetActive(false);
+        _tigersShop.SetActive(true);
+    }
+
+    public void CloseTigersShop()
+    {
+        _tigersShop.SetActive(false);
+        _shopPanel.SetActive(true);
+    }
+
+    public void OpenRoadsShop()
+    {
+        _shopPanel.SetActive(false);
+        _roadsShop.SetActive(true);
+    }
+
+    public void CloseRoadsShop()
+    {
+        _roadsShop.SetActive(false);
+        _shopPanel.SetActive(true);
+    }
+
 }

@@ -6,7 +6,6 @@ public class StonesSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _stones;
     private GameObject _tiger;
-    //private float[] xPosition = {-1.75f, 0, 1.75f };
     public static bool CanSpawnStone;
 
     private void Start()

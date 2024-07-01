@@ -1,9 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 
-public class SkinSelector : MonoBehaviour
+public class RoadSkinSelector : MonoBehaviour
 {
     [System.Serializable]
     public class Skin
@@ -18,16 +19,16 @@ public class SkinSelector : MonoBehaviour
     public Skin[] skins;
     private int playerMoney;
     [SerializeField] private TMP_Text _totalScoreText;
-    [SerializeField] private TMP_Text _totalScoreTextRoad;
+    [SerializeField] private TMP_Text _totalScoreTextTigers;
 
     private void Start()
     {
         playerMoney = PlayerPrefs.GetInt("TotalScore", 0);
         _totalScoreText.text = playerMoney.ToString();
-        _totalScoreTextRoad.text = playerMoney.ToString();
-        if (string.IsNullOrEmpty(PlayerPrefs.GetString("SelectedSkin")))
+        _totalScoreTextTigers.text = playerMoney.ToString();
+        if (string.IsNullOrEmpty(PlayerPrefs.GetString("SelectedSkinRoad")))
         {
-            PlayerPrefs.SetString("SelectedSkin", "0");
+            PlayerPrefs.SetString("SelectedSkinRoad", "0");
             PlayerPrefs.SetInt("0", 1);
         }
 
@@ -36,7 +37,7 @@ public class SkinSelector : MonoBehaviour
             if (PlayerPrefs.GetInt(skin.skinName, 0) == 1)
             {
                 skin.button.onClick.AddListener(() => SelectSkin(skin.skinName));
-                if (PlayerPrefs.GetString("SelectedSkin") == skin.skinName)
+                if (PlayerPrefs.GetString("SelectedSkinRoad") == skin.skinName)
                 {
                     skin.buttonText.text = "Selected";
                     skin.button.image.color = Color.green;
@@ -62,8 +63,7 @@ public class SkinSelector : MonoBehaviour
             playerMoney -= skin.price;
             PlayerPrefs.SetInt("TotalScore", playerMoney);
             _totalScoreText.text = playerMoney.ToString();
-            _totalScoreTextRoad.text = playerMoney.ToString();
-
+            _totalScoreTextTigers.text = playerMoney.ToString();
             PlayerPrefs.SetInt(skin.skinName, 1);
             skin.buttonText.text = "Select";
             skin.button.onClick.RemoveAllListeners();
@@ -93,7 +93,7 @@ public class SkinSelector : MonoBehaviour
             {
                 skin.button.image.color = Color.green;
                 skin.buttonText.text = "Selected";
-                PlayerPrefs.SetString("SelectedSkin", skinName);
+                PlayerPrefs.SetString("SelectedSkinRoad", skinName);
             }
             else if (PlayerPrefs.GetInt(skin.skinName, 0) == 1)
             {
