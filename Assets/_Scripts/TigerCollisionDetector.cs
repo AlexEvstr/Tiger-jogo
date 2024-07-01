@@ -49,6 +49,7 @@ public class TigerCollisionDetector : MonoBehaviour
 
         for (int i = 0; i < _allBallsImages.Length; i++)
         {
+            _allBallsImages[i].gameObject.SetActive(true);
             _allBallsImages[i].sprite = _ballSprites[i];
         }
     }

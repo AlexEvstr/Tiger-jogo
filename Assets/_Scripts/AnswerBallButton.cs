@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,11 +10,6 @@ public class AnswerBallButton : MonoBehaviour
     [SerializeField] TigerJump _tigerJump;
     [SerializeField] LevelCompletedBeavior _levelCompletedBeavior;
 
-    private void Start()
-    {
-        
-    }
-
     public void ChooseAnswer()
     {
         string firstBall = PlayerPrefs.GetString("selectedBall_1", "ball_0");
@@ -23,6 +17,7 @@ public class AnswerBallButton : MonoBehaviour
         if (firstBall == GetComponent<Image>().sprite.name || secondBall == GetComponent<Image>().sprite.name)
         {
             GameManager.ScorePointsOnLevel++;
+            
 
             if (GameManager.ScorePointsOnLevel == 2)
             {
@@ -36,18 +31,25 @@ public class AnswerBallButton : MonoBehaviour
                 if (LevelCounter.LevelIndex % 5 == 0)
                 {
                     _levelCompletedBeavior.ShowPlus200();
+                    GameTotalScore.TotalScore += 200;   
                 }
                 else
                 {
                     _levelCompletedBeavior.ShowPlus100();
+                    GameTotalScore.TotalScore += 100;
                 }
+
+                PlayerPrefs.SetInt("TotalScore", GameTotalScore.TotalScore);
                 PlayerPrefs.SetInt("levelIndex", LevelCounter.LevelIndex);
+                
             }
+            gameObject.SetActive(false);
         }
         else
         {
             _losePanel.SetActive(true);
             GameManager.ScorePointsOnLevel = 0;
         }
+        
     }
 }
