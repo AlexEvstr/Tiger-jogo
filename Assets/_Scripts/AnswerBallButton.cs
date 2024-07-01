@@ -9,6 +9,7 @@ public class AnswerBallButton : MonoBehaviour
     [SerializeField] private GameObject _allBallsPanel;
 
     [SerializeField] TigerJump _tigerJump;
+    [SerializeField] LevelCompletedBeavior _levelCompletedBeavior;
 
     private void Start()
     {
@@ -32,6 +33,14 @@ public class AnswerBallButton : MonoBehaviour
                 _allBallsPanel.SetActive(false);
                 GameManager.ScorePointsOnLevel = 0;
                 LevelCounter.LevelIndex++;
+                if (LevelCounter.LevelIndex % 5 == 0)
+                {
+                    _levelCompletedBeavior.ShowPlus200();
+                }
+                else
+                {
+                    _levelCompletedBeavior.ShowPlus100();
+                }
                 PlayerPrefs.SetInt("levelIndex", LevelCounter.LevelIndex);
             }
         }
@@ -41,20 +50,4 @@ public class AnswerBallButton : MonoBehaviour
             GameManager.ScorePointsOnLevel = 0;
         }
     }
-
-    //private void MoveTiger()
-    //{
-    //    _tiger.GetComponent<Animator>().enabled = true;
-
-    //    if (_tiger.transform.position.x == 0)
-    //    {
-    //        _tiger.transform.position = new Vector2(_xPositions[Random.Range(0, _xPositions.Length)], _tiger.transform.position.y);
-    //    }
-    //    else
-    //    {
-    //        _tiger.transform.position = new Vector2(0, _tiger.transform.position.y);
-    //    }
-    //}
-
-    
 }
