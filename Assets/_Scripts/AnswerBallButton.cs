@@ -31,6 +31,8 @@ public class AnswerBallButton : MonoBehaviour
                 StonesSpawner.CanSpawnStone = true;
                 _allBallsPanel.SetActive(false);
                 GameManager.ScorePointsOnLevel = 0;
+                LevelCounter.LevelIndex++;
+                PlayerPrefs.SetInt("levelIndex", LevelCounter.LevelIndex);
             }
         }
         else
