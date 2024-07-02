@@ -10,6 +10,12 @@ public class MenuBootstrap : MonoBehaviour
     [SerializeField] private GameObject _shopPanel;
     [SerializeField] private GameObject _tigersShop;
     [SerializeField] private GameObject _roadsShop;
+    [SerializeField] private GameObject _supportWindow;
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
 
     public void StartGame()
     {
@@ -64,4 +70,15 @@ public class MenuBootstrap : MonoBehaviour
         _shopPanel.SetActive(true);
     }
 
+    public void OpenSUpport()
+    {
+        _settingsPanel.SetActive(false);
+        _supportWindow.SetActive(true);
+    }
+
+    public void CloseSupport()
+    {
+        _supportWindow.SetActive(false);
+        _settingsPanel.SetActive(true);
+    }
 }
