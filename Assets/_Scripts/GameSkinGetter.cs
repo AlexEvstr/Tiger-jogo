@@ -11,10 +11,8 @@ public class GameSkinGetter : MonoBehaviour
     {
         int tigerIndex = PlayerPrefs.GetInt("SelectedSkin", 0);
         _tigers[tigerIndex].SetActive(true);
-        Debug.Log("tiger: " + tigerIndex);
 
         int roadIndex = PlayerPrefs.GetInt("SelectedSkinRoad", 0);
-        Debug.Log("road: " + roadIndex);
         foreach (var item in _roads)
         {
             item.sprite = _roadsSprites[roadIndex];

@@ -40,7 +40,7 @@ public class RoadSkinSelector : MonoBehaviour
                 if (PlayerPrefs.GetInt("SelectedSkinRoad") == int.Parse(skin.skinName))
                 {
                     skin.buttonText.text = "Selected";
-                    skin.button.image.color = Color.green;
+                    skin.button.image.color = Color.red;
                 }
                 else
                 {
@@ -91,7 +91,7 @@ public class RoadSkinSelector : MonoBehaviour
         {
             if (skin.skinName == skinName)
             {
-                skin.button.image.color = Color.green;
+                skin.button.image.color = Color.red;
                 skin.buttonText.text = "Selected";
                 PlayerPrefs.SetInt("SelectedSkinRoad", int.Parse(skinName));
             }

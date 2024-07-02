@@ -20,12 +20,12 @@ public class LevelCompletedBeavior : MonoBehaviour
     private IEnumerator PlusBehavior(GameObject plusGameObject)
     {
         float alphaColor = 1.0f;
-        plusGameObject.GetComponent<TMP_Text>().color = new Color(1, 1, 1, alphaColor);
+        plusGameObject.GetComponent<TMP_Text>().color = new Color(1.0f, 0.6f, 0f, alphaColor);
         plusGameObject.SetActive(true);
         
         while(alphaColor > 0)
         {
-            plusGameObject.GetComponent<TMP_Text>().color = new Color(1, 1, 1, alphaColor);
+            plusGameObject.GetComponent<TMP_Text>().color = new Color(1.0f, 0.6f, 0f, alphaColor);
             alphaColor -= 0.1f;
             yield return new WaitForSeconds(0.1f);
         }
