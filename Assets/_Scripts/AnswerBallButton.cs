@@ -9,6 +9,7 @@ public class AnswerBallButton : MonoBehaviour
 
     [SerializeField] TigerJump _tigerJump;
     [SerializeField] LevelCompletedBeavior _levelCompletedBeavior;
+    [SerializeField] private GameEffects _gameEffects;
 
     public void ChooseAnswer()
     {
@@ -17,13 +18,16 @@ public class AnswerBallButton : MonoBehaviour
         if (firstBall == GetComponent<Image>().sprite.name || secondBall == GetComponent<Image>().sprite.name)
         {
             GameManager.ScorePointsOnLevel++;
-            
+            _gameEffects.PlayCorrectSound();
+
+
 
             if (GameManager.ScorePointsOnLevel == 2)
             {
                 RoadMovement.CanMovement = true;
 
                 _tigerJump.MoveTiger();
+                _gameEffects.PlayJumpSound();
                 StonesSpawner.CanSpawnStone = true;
                 _allBallsPanel.SetActive(false);
                 GameManager.ScorePointsOnLevel = 0;
@@ -48,6 +52,7 @@ public class AnswerBallButton : MonoBehaviour
         else
         {
             _losePanel.SetActive(true);
+            _gameEffects.PlayLoseSound();
             GameManager.ScorePointsOnLevel = 0;
         }
         

@@ -20,9 +20,11 @@ public class RoadSkinSelector : MonoBehaviour
     private int playerMoney;
     [SerializeField] private TMP_Text _totalScoreText;
     [SerializeField] private TMP_Text _totalScoreTextTigers;
+    private MenuEffects _menuEffects;
 
     private void Start()
     {
+        _menuEffects = GetComponent<MenuEffects>();
         playerMoney = PlayerPrefs.GetInt("TotalScore", 0);
         _totalScoreText.text = playerMoney.ToString();
         _totalScoreTextTigers.text = playerMoney.ToString();
@@ -60,6 +62,7 @@ public class RoadSkinSelector : MonoBehaviour
         playerMoney = PlayerPrefs.GetInt("TotalScore", 0);
         if (playerMoney >= skin.price)
         {
+            _menuEffects.PlayPurchaseSound();
             playerMoney -= skin.price;
             PlayerPrefs.SetInt("TotalScore", playerMoney);
             _totalScoreText.text = playerMoney.ToString();
@@ -73,6 +76,7 @@ public class RoadSkinSelector : MonoBehaviour
         }
         else
         {
+            _menuEffects.PlayClickSound();
             StartCoroutine(ShowNoteEnoughText(skin));
         }
     }
@@ -91,6 +95,7 @@ public class RoadSkinSelector : MonoBehaviour
         {
             if (skin.skinName == skinName)
             {
+                _menuEffects.PlayClickSound();
                 skin.button.image.color = Color.red;
                 skin.buttonText.text = "Selected";
                 PlayerPrefs.SetInt("SelectedSkinRoad", int.Parse(skinName));

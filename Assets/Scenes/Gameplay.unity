@@ -273,6 +273,8 @@ GameObject:
   - component: {fileID: 22875592}
   - component: {fileID: 22875593}
   - component: {fileID: 22875594}
+  - component: {fileID: 22875595}
+  - component: {fileID: 22875596}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -401,6 +403,118 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 390a8380890cb4d55b52b6e14245a122, type: 3}
   - {fileID: 21300000, guid: 37c6091f4b48c46df9e11d34d49b263a, type: 3}
   - {fileID: 21300000, guid: 8735b17054571436897de48ded8332a0, type: 3}
+--- !u!82 &22875595
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22875586}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f6e3f5851bbd6449983a6cf50b5a861d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &22875596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22875586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea29d13704564ce9961dbb188d53736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: b8ad3e1dfe5b9465296926ce8a82a298, type: 3}
+  jumpSound: {fileID: 8300000, guid: 41951eec866934cef8309aab9a601aa5, type: 3}
+  loseSound: {fileID: 8300000, guid: ba3a97afc3c5f4ee18025001b0a62025, type: 3}
+  correctSound: {fileID: 8300000, guid: 1c6be6b2afc9f461ba9043bda69ec5cd, type: 3}
 --- !u!1 &122464250
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +664,7 @@ MonoBehaviour:
   _allBallsPanel: {fileID: 2105612481}
   _tigerJump: {fileID: 22875590}
   _levelCompletedBeavior: {fileID: 22875592}
+  _gameEffects: {fileID: 22875596}
 --- !u!1 &196885476
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +948,7 @@ MonoBehaviour:
   _allBallsPanel: {fileID: 2105612481}
   _tigerJump: {fileID: 22875590}
   _levelCompletedBeavior: {fileID: 22875592}
+  _gameEffects: {fileID: 22875596}
 --- !u!1 &392488714
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1098,7 @@ MonoBehaviour:
   _allBallsPanel: {fileID: 2105612481}
   _tigerJump: {fileID: 22875590}
   _levelCompletedBeavior: {fileID: 22875592}
+  _gameEffects: {fileID: 22875596}
 --- !u!1 &455888520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +2056,7 @@ MonoBehaviour:
   _allBallsPanel: {fileID: 2105612481}
   _tigerJump: {fileID: 22875590}
   _levelCompletedBeavior: {fileID: 22875592}
+  _gameEffects: {fileID: 22875596}
 --- !u!1001 &748786653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2734,6 +2852,7 @@ MonoBehaviour:
   _allBallsPanel: {fileID: 2105612481}
   _tigerJump: {fileID: 22875590}
   _levelCompletedBeavior: {fileID: 22875592}
+  _gameEffects: {fileID: 22875596}
 --- !u!1 &1295950376
 GameObject:
   m_ObjectHideFlags: 0
@@ -4142,6 +4261,7 @@ MonoBehaviour:
   _allBallsPanel: {fileID: 2105612481}
   _tigerJump: {fileID: 22875590}
   _levelCompletedBeavior: {fileID: 22875592}
+  _gameEffects: {fileID: 22875596}
 --- !u!1 &1879325683
 GameObject:
   m_ObjectHideFlags: 0
